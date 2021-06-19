@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
     private Map<String, AppUser> users = new HashMap<>();

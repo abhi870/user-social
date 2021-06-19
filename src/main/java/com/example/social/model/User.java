@@ -1,16 +1,16 @@
 package com.example.social.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public abstract class User {
 
     private String username;
@@ -18,7 +18,7 @@ public abstract class User {
     private List<Post> posts;
     private Map<String,User> following;
 
-    public abstract List<Post> getPosts();
+    public abstract List<Post> getAllPosts();
     public abstract boolean followOtherUser(AppUser toBeFollowed);
     public abstract List<Post> getFeedPosts();
 }

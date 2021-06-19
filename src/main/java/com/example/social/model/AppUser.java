@@ -1,11 +1,5 @@
 package com.example.social.model;
 
-import com.example.social.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,15 +8,14 @@ public class AppUser extends User {
 
 
     @Override
-    public List<Post> getPosts() {
-        this.getPosts();
-        return null;
+    public List<Post> getAllPosts() {
+        return this.getPosts();
     }
 
     @Override
     public boolean followOtherUser(AppUser toBeFollowed) {
         this.getFollowing().put(toBeFollowed.getUsername(), toBeFollowed);
-        return false;
+        return true;
     }
 
     @Override

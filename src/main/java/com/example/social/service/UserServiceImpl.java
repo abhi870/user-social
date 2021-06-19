@@ -28,10 +28,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<PostDto> getFeedForUser(String username) {
         List<PostDto> feedElementList = new LinkedList<>();
-        userRepository.getByid(username).getFeedPosts()
-                .forEach(p -> feedElementList.add(new PostDto(p.getUsername(), p.getImgUrl(), p.getCaption()
+        List<Post> posts = userRepository.getByid(username).getFeedPosts();
+        posts.forEach(p -> feedElementList.add(new PostDto(p.getUsername(), p.getImgUrl(), p.getCaption()
                         , getComments(p), p.getDate())));
-        return null;
+        return feedElementList;
     }
 
     @Override
