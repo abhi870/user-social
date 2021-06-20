@@ -36,6 +36,7 @@ public class SocialApplication {
                 authentication.register("abhi870", "abhi870");
                 authentication.register("prashant", "passkey");
                 authentication.register("user3", "user3");
+                authentication.register("mandar", "usr4");
 
                 userRepository.getByid("abhi870").getFollowing().put("prashant",userRepository.getByid("prashant"));
 
@@ -43,6 +44,12 @@ public class SocialApplication {
                 Comment comm1 = new Comment("1","prashant","1","some comment", new Date());
                 commentList.add(comm1);
                 Post post1 = new Post("1","abhi870","imgurl1","caption1",commentList,new Date());
+
+                List<Comment> commentList2 = new LinkedList<>();
+                Comment comm2 = new Comment("1","prashant","1","some comment", new Date());
+                commentList2.add(comm1);
+                Post post2 = new Post("1","mandar","imgurl1","caption1",commentList,new Date());
+                userRepository.getByid("mandar").getPosts().add(post2);
                 userRepository.getByid("abhi870").getPosts().add(post1);
 
             }

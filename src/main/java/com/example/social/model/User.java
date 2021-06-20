@@ -18,6 +18,7 @@ public abstract class User {
     private List<Post> posts;
     private Map<String,User> following;
 
+
     public abstract List<Post> getAllPosts();
     public abstract boolean followOtherUser(AppUser toBeFollowed);
     public abstract List<Post> getFeedPosts();
